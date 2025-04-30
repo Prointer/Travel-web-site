@@ -1,3 +1,4 @@
+import { Navigation } from 'lucide-react'
 import React from 'react'
 import Europe_img from '../assets/Europe.webp'
 import London_img from '../assets/London.webp'
@@ -14,9 +15,11 @@ function DestinationSection(){
 			<div className='destinations-cards-container'>
 				{destinationsData.map((destination, index)=>(<div className='destination-card' key={index}>
 					<img src={destination.icon} alt={destination.title} className='destination-image' />
-					<h4 className='destination-title'>{destination.title}</h4>
-					<p className='destination-price'>{destination.price}</p>
-					<p className='destination-travel-time'>{destination.travelTime}</p>
+					<div className='destination-card-info'>
+					<h4 className='destination-card-title'>{destination.title}</h4>
+					<p className='destination-card-price'>{destination.price}</p>
+					</div>
+					<div className='destination-card-duration'><Navigation size={16} style={{marginRight:'8px'}} /><span>{destination.travelTime}</span></div>
 				</div>))}
 			</div>
 
