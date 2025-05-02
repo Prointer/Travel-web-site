@@ -10,7 +10,7 @@ function HeroSection() {
 				<p className='hero-description'>Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.</p>
 				<div className='hero-btns-container'>
 					<button className='hero-btn'>Find out more</button>
-					<button class="hero-play-btn">
+					<button className="hero-play-btn">
   					<svg viewBox="0 0 24 24" width="40" height="40" fill="white">
     					<path d="M8 5v14l11-7z" />
   					</svg>
