@@ -3,6 +3,13 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+img { /* Add general responsive image rule */
+  max-width: 100%;
+  height: auto;
+  display: block; /* Remove extra space below inline images */
+}
+
 /*Базовый шрифт*/
 body{
 	font-family: Google Sans, sans-serif;
@@ -191,9 +198,9 @@ body{
 	position: relative;
 }
 .hero-image-main{
-	width: 765px;
-	height: 764px;
-	max-width: 100%;
+	width: 100%; /* Changed from fixed width */
+	max-width: 765px; /* Maintain max size for large screens */
+	height: auto; /* Ensure aspect ratio is maintained */
 }
 .hero-image-plane-1,
 .hero-image-plane-2{
@@ -260,7 +267,8 @@ body{
 }
 .service-card{
   background-color: #fff;
-  width: 235px;
+  width: 100%; /* Changed from fixed width */
+  max-width: 235px; /* Added max-width to maintain design */
 	height: 351px;
   padding: 40px 25px;
   border-radius: 24px;
@@ -333,7 +341,8 @@ body{
 }
 .destination-card{
 	background-color: #fff;
-	width: 315px;
+	width: 100%; /* Changed from fixed width */
+	max-width: 315px; /* Added max-width to maintain design */
 	height: 457px;
 	padding: 0px 0px 40px 0px;
 	border-radius: 24px;
@@ -457,7 +466,8 @@ body{
 	background-color: #fff;
 	border-radius: 24px;
 	box-shadow: 0px 20px 40px rgba(89,177,230, 0.5);
-	width: 370px;
+	width: 100%; /* Changed from fixed width */
+	max-width: 370px; /* Added max-width to maintain design */
 	height: 400px;
 	padding: 20px;
 	display: flex;
@@ -550,7 +560,8 @@ body{
 	font-weight: bold;
 	line-height: 1.2;
 	margin-bottom: 40px;
-	width: 400px;
+	width: 100%; /* Changed from fixed to fluid */
+	max-width: 400px; /* Maintain max-width for design consistency */
 }
 .testimonial-dots{
 	display: flex;
@@ -702,7 +713,8 @@ transition: transform 0.3s ease, opacity 0.3s ease;
   padding: 12px 20px;
   border: none;
   border-radius: 10px;
-  width: 280px;
+  width: 100%; /* Make input full width by default */
+  max-width: 280px; /* Maintain a max-width for larger screens */
   font-size: 16px;
 }
 .newsletter-button {
@@ -728,6 +740,179 @@ transition: transform 0.3s ease, opacity 0.3s ease;
 	color: #181E4B;
 	font-weight: 500;
 	margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Extra Small Devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .header__menu {
+    display: none; /* Hide menu by default on small screens */
+  }
+  .header__btn {
+    display: none; /* Hide buttons by default on small screens */
+  }
+  /* Add a hamburger menu icon (implementation would be in JS/React) */
+  .header .container {
+    justify-content: space-between;
+  }
+
+  .hero-section {
+    padding: 80px 5%;
+    min-height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: 48px; /* Adjusted font size */
+    line-height: 1.2; /* Adjusted line height */
+  }
+  .hero-description {
+    font-size: 14px; /* Adjusted font size */
+  }
+  .hero-btns-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-image-main {
+    width: 100%; /* Make image responsive */
+    height: auto;
+    margin-top: 30px;
+  }
+  .hero-image-plane-1,
+  .hero-image-plane-2 {
+    display: none; /* Hide decorative planes on small screens */
+  }
+
+  .services-cards-container,
+  .destinations-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card,
+  .destination-card {
+    width: 90%; /* Adjust card width */
+    max-width: 350px; /* Add max-width for consistency */
+  }
+
+  .travel-points-section,
+  .testimonials-section,
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .travel-points-section-left,
+  .travel-points-section-right,
+  .testimonials-section-left,
+  .testimonials-section-right {
+    max-width: 100%;
+    padding: 20px 0;
+  }
+
+  .testimonials-title {
+    width: auto; /* Adjust width for smaller screens */
+  }
+
+  .trip-card-container {
+    width: 90%; /* Adjust card width */
+    max-width: 350px; /* Add max-width for consistency */
+  }
+
+  .newsletter-container {
+    flex-direction: column;
+  }
+
+  .newsletter-input {
+    width: 100%; /* Make input full width */
+  }
+
+  .footer-nav {
+    justify-content: center; /* Center navigation items */
+  }
+}
+
+/* Small Devices (phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .header__menu {
+    gap: 15px;
+  }
+  .header__menu li a {
+    font-size: 14px;
+  }
+  .header__btn_signup {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .hero-title {
+    font-size: 60px; /* Adjusted font size */
+  }
+
+  .services-title,
+  .destination-title,
+  .travel-point-title,
+  .testimonials-title {
+    font-size: 36px; /* Adjust section titles */
+  }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .header__menu {
+    gap: 20px;
+  }
+  .header__btn_signup {
+    padding: 10px 18px;
+  }
+
+  .hero-title {
+    font-size: 72px; /* Adjusted font size */
+  }
+
+  .services-title,
+  .destination-title,
+  .travel-point-title,
+  .testimonials-title {
+    font-size: 42px; /* Adjust section titles */
+  }
+
+  .services-cards-container,
+  .destinations-cards-container {
+    gap: 30px; /* Adjust gap for medium screens */
+  }
+
+  .service-card,
+  .destination-card {
+    width: 45%; /* Adjust card width for medium screens */
+  }
+
+  .travel-points-section,
+  .testimonials-section {
+    gap: 30px; /* Adjust gap */
+  }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Add styles for large devices here */
+  .container {
+    width: 95%; /* Adjust container width */
+  }
+
+  .hero-title {
+    font-size: 78px; /* Adjusted font size */
+  }
+}
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* Add styles for extra large devices here */
+  /* Most styles are already optimized for this size, but minor tweaks can be added if needed */
 }
 .footer-logo-desc{
 	font-family: 'Poppins', serif;
