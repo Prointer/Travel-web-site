@@ -1,8 +1,34 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import Logo from '../assets/logo.png'
-function Header(){
+
+const Header=()=>{
+	const [hidden, setHidden] = useState(false);
+	const [lastScrollY, setLastScrollY] = useState(0);
+
+	const handleScroll = () =>{
+		const currentScrollY = window.scrollY;
+		if(currentScrollY>lastScrollY && currentScrollY>100){
+			setHidden(true);
+	}else{
+		setHidden(false);
+	}
+	setLastScrollY(currentScrollY);
+}
+  useEffect(() => {
+  const handleScroll = () => {
+    const header = document.querySelector('.header');
+    if (window.scrollY === 0) {
+      header.classList.remove('hidden');
+    } else {
+      header.classList.add('hidden');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 	return(
-		<header className='header'>
+		<header className={`header ${hidden ? 'hidden' : ''}`}>
 			<div className='container header__container'>
 				<div className='header__logo'>
 					<img src={Logo} alt='logo' className='header__logo_img'></img>

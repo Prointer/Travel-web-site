@@ -1,4 +1,3 @@
-import React from 'react'
 import Google_play_icon from '../assets/GooglePlay.png'
 import Play_store_icon from '../assets/PlayStore.png'
 import Instagram_icon from '../assets/Social.png'

@@ -1,3 +1,4 @@
+
 *{
 	margin: 0;
 	padding: 0;
@@ -793,4 +794,53 @@ transition: transform 0.3s ease, opacity 0.3s ease;
 	flex-direction: row;
 	align-items: center;
 	gap: 20px;
+}
+
+@media (max-width: 768px) {
+.header{
+	position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  transition: top 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.header.hidden{
+	top: -200px;
+}
+.container {
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 20px 0 20px 0;
+	gap: 20px;
+	position: relative;
+}
+.header__logo{
+	font-size: 24px;
+}
+.header__nav{
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 100%;
+	gap: 15px;
+	margin-top: 10px;
+}
+.header__menu ul{
+	font-size: 16px
+}
+.header__btn_signup{
+	align-self: stretch;
+	text-align: center;
+	padding: 10px 0;
+	font-size: 16px;
+}
+.hero-section-left{
+	max-width: 100%;
+	padding: 20px 5%;
+}
+.hero-section-right{
+	display: none;
+}
 }
