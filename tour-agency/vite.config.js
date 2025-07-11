@@ -3,6 +3,6 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/tour-agency/',
+  base: '/Travel-web-site/tour-agency/',
   plugins: [react()],
 })
